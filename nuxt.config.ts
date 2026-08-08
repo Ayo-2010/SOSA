@@ -10,20 +10,29 @@ export default defineNuxtConfig({
     enabled: true
   },
 
+  app: {
+    head: {
+      title: 'SOSA Network - Start-Well Old Students Association',
+      link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }
+      ]
+    }
+  },
+
   css: ['~/assets/css/main.css'],
 
   colorMode: {
     preference: 'light'
   },
 
-  routeRules: {
-    '/': { prerender: true },
-    '/events': { prerender: true },
-    '/directory': { prerender: false },
-    '/register': { prerender: false }
-  },
-
   compatibilityDate: '2026-06-30',
+
+  nitro: {
+    prerender: {
+      crawlLinks: false,
+      routes: []
+    }
+  },
 
   eslint: {
     config: {
