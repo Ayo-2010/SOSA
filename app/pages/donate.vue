@@ -1,36 +1,22 @@
-<script setup lang="ts">
-import { membershipDues } from '~/data/homepage'
-
-const copyDetails = () => {
-  const text = `${membershipDues.bankName}\n${membershipDues.accountName}\n${membershipDues.accountNumber}\nAmount: ${membershipDues.currency} ${membershipDues.amount}`
-  window.navigator.clipboard.writeText(text)
-}
-
-useSeoMeta({
-  title: 'Support SOSA — Donate',
-  description: 'Contribute to facility upgrades, scholarships, and alumni programs.'
-})
-</script>
-
 <template>
-  <div class="min-h-screen bg-gray-50 py-12">
+  <div class="min-h-screen bg-gray-50 py-8 sm:py-10 md:py-12 px-4 sm:px-6 lg:px-8">
     <UContainer class="max-w-5xl">
-      <div class="text-center max-w-2xl mx-auto mb-12">
+      <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10 md:mb-12">
         <UBadge
           color="primary"
           variant="subtle"
           label="Support Alma Mater"
           class="mb-3"
         />
-        <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">
           Make a Donation
         </h1>
-        <p class="text-gray-600">
+        <p class="text-gray-600 text-sm sm:text-base md:text-lg">
           Your contribution directly funds scholarships, facility upgrades, mentorship programs, and alumni outreach initiatives.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
         <UCard class="bg-white text-gray-900 border border-gray-200">
           <template #header>
             <h2 class="text-xl font-bold text-gray-900">
@@ -61,7 +47,8 @@ useSeoMeta({
               block
               variant="outline"
               icon="i-heroicons-clipboard-document"
-              label="Copy Account Details"
+              :label="copied ? 'Copied!' : 'Copy Account Details'"
+              :color="copied ? 'success' : 'neutral'"
               @click="copyDetails"
             />
           </div>
@@ -69,7 +56,7 @@ useSeoMeta({
 
         <UCard class="bg-white text-gray-900 border border-gray-200">
           <template #header>
-            <h2 class="text-xl font-bold text-gray-900">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">
               Mobile / Online
             </h2>
             <p class="text-sm text-gray-600 mt-1">
@@ -87,8 +74,9 @@ useSeoMeta({
                 variant="outline"
                 icon="i-heroicons-credit-card"
                 label="Donate Online"
-                to="https://www.paypal.com/donate"
+                :to="paypalUrl"
                 target="_blank"
+                rel="noopener noreferrer"
               />
             </div>
 
@@ -101,8 +89,9 @@ useSeoMeta({
                 variant="outline"
                 icon="i-heroicons-chat-bubble-bottom-center-text"
                 label="Chat with Treasurer"
-                to="https://wa.me/1234567890"
+                :to="`https://wa.me/${whatsappNumber}`"
                 target="_blank"
+                rel="noopener noreferrer"
               />
             </div>
           </div>
@@ -147,3 +136,31 @@ useSeoMeta({
     </UContainer>
   </div>
 </template>
+
+<script setup lang="ts">
+import { useClipboard } from '~/composables/useClipboard'
+
+const runtimeConfig = useRuntimeConfig()
+const membershipDues = runtimeConfig.public.membershipDues
+const whatsappNumber = runtimeConfig.public.whatsappNumber
+const paypalUrl = runtimeConfig.public.paypalUrl
+const { copied, copyText } = useClipboard()
+
+const copyDetails = () => {
+  const text = `${membershipDues.bankName}\n${membershipDues.accountName}\n${membershipDues.accountNumber}\nAmount: ${membershipDues.currency} ${membershipDues.amount}`
+  copyText(text)
+}
+
+useSeoMeta({
+  title: 'Support SOSA — Donate',
+  description: 'Contribute to facility upgrades, scholarships, and alumni programs.',
+  ogTitle: 'Support SOSA — Donate',
+  ogDescription: 'Contribute to facility upgrades, scholarships, and alumni programs.'
+})
+
+useHead({
+  link: [
+    { rel: 'canonical', href: 'https://sosa-network.org/donate' }
+  ]
+})
+</script>

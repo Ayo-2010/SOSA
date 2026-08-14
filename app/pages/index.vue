@@ -1,19 +1,3 @@
-<script setup>
-import { stats, latestNews, membershipDues } from '~/data/homepage'
-import { events } from '~/data/events'
-import HeroSection from '~/components/HeroSection.vue'
-import StatsSection from '~/components/StatsSection.vue'
-import EventCard from '~/components/EventCard.vue'
-import NewsCard from '~/components/NewsCard.vue'
-
-const upcomingEvent = events.find(e => e.featured) || events[0]
-
-useSeoMeta({
-  title: 'SOSA Network — School Old Students Association',
-  description: 'Reconnect with old classmates, stay updated on school milestones, and never miss out on upcoming reunions, mentorship programs, and networking events.'
-})
-</script>
-
 <template>
   <div>
     <HeroSection>
@@ -24,28 +8,31 @@ useSeoMeta({
         The official alumni network of Start-Well Huffadh College — fostering lifelong bonds, preserving our heritage, and giving back to our alma mater.
       </template>
       <template #actions>
-        <div class="flex flex-wrap justify-center gap-4">
+        <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
           <UButton
             icon="i-heroicons-calendar"
-            size="lg"
+            size="md"
             label="View Events"
             to="/events"
           />
+          <template v-if="user">
+            <UButton
+              icon="i-heroicons-chat-bubble-left-right"
+              size="md"
+              color="success"
+              variant="solid"
+              label="Join WhatsApp Group"
+              :to="`https://wa.me/${whatsappNumber}`"
+              target="_blank"
+              rel="noopener noreferrer"
+            />
+          </template>
           <UButton
-            icon="i-heroicons-chat-bubble-left-right"
-            size="lg"
-            color="emerald"
-            variant="solid"
-            label="Join WhatsApp Group"
-            to="https://chat.whatsapp.com/YOUR_GROUP_LINK_HERE"
-            target="_blank"
-          />
-          <UButton
-            icon="i-heroicons-user-plus"
-            size="lg"
+            :icon="user ? 'i-heroicons-pencil-square' : 'i-heroicons-user-plus'"
+            size="md"
             variant="outline"
-            label="Register / Update Info"
-            to="/register"
+            :label="user ? 'Update Profile' : 'Register / Update Info'"
+            :to="user ? '/profile' : '/register'"
           />
         </div>
       </template>
@@ -53,7 +40,7 @@ useSeoMeta({
 
     <StatsSection :stats="stats" />
 
-    <div class="py-16 bg-gray-50">
+    <div class="py-8 sm:py-12 md:py-16 bg-gray-50 px-4 sm:px-6 lg:px-8">
       <UContainer>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -63,10 +50,10 @@ useSeoMeta({
               label="Our Motto"
               class="mb-3"
             />
-            <h2 class="text-3xl font-extrabold text-gray-900 mb-4">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-gray-900 mb-3 sm:mb-4">
               Aspire, Acquire, and Achieve
             </h2>
-            <p class="text-gray-600 mb-6 leading-relaxed">
+            <p class="text-gray-600 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
               Founded on July 30, 2023 by Master Abdulmalik Sanni, the Startwell Old Student Association (SOSA) brings together alumni of Start-Well Huffadh College. We aspire to become more than the world expects, acquire wisdom and values, and achieve significance that uplifts others.
             </p>
             <UButton
@@ -78,49 +65,49 @@ useSeoMeta({
             />
           </div>
 
-          <div class="grid grid-cols-2 gap-4">
-            <UCard class="bg-white text-gray-900 border border-gray-200">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+            <UCard class="bg-white text-gray-900 border border-gray-200 p-3 sm:p-4 md:p-5">
               <UIcon
                 name="i-heroicons-building-library"
-                class="w-8 h-8 text-primary-600 mb-2"
+                class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-primary-600 mb-1.5 sm:mb-2"
               />
-              <h4 class="font-bold text-gray-900">
+              <h4 class="font-bold text-xs sm:text-sm md:text-base text-gray-900">
                 Established 2023
               </h4>
               <p class="text-xs text-gray-500">
                 Founded July 30, 2023.
               </p>
             </UCard>
-            <UCard class="bg-white text-gray-900 border border-gray-200">
+            <UCard class="bg-white text-gray-900 border border-gray-200 p-3 sm:p-4 md:p-5">
               <UIcon
                 name="i-heroicons-user-group"
-                class="w-8 h-8 text-primary-600 mb-2"
+                class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-primary-600 mb-1.5 sm:mb-2"
               />
-              <h4 class="font-bold text-gray-900">
+              <h4 class="font-bold text-xs sm:text-sm md:text-base text-gray-900">
                 64+ Alumni
               </h4>
               <p class="text-xs text-gray-500">
                 Growing network of trailblazers.
               </p>
             </UCard>
-            <UCard class="bg-white text-gray-900 border border-gray-200">
+            <UCard class="bg-white text-gray-900 border border-gray-200 p-3 sm:p-4 md:p-5">
               <UIcon
                 name="i-heroicons-academic-cap"
-                class="w-8 h-8 text-primary-600 mb-2"
+                class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-primary-600 mb-1.5 sm:mb-2"
               />
-              <h4 class="font-bold text-gray-900">
-                Class of 25
+              <h4 class="font-bold text-xs sm:text-sm md:text-base text-gray-900">
+                Class of 26
               </h4>
               <p class="text-xs text-gray-500">
-                Graduated July 27, 2025.
+                Graduated July 25, 2026.
               </p>
             </UCard>
-            <UCard class="bg-white text-gray-900 border border-gray-200">
+            <UCard class="bg-white text-gray-900 border border-gray-200 p-3 sm:p-4 md:p-5">
               <UIcon
                 name="i-heroicons-globe-alt"
-                class="w-8 h-8 text-primary-600 mb-2"
+                class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-primary-600 mb-1.5 sm:mb-2"
               />
-              <h4 class="font-bold text-gray-900">
+              <h4 class="font-bold text-xs sm:text-sm md:text-base text-gray-900">
                 Digital Platform
               </h4>
               <p class="text-xs text-gray-500">
@@ -132,12 +119,12 @@ useSeoMeta({
       </UContainer>
     </div>
 
-    <UContainer class="py-16">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div class="lg:col-span-2 space-y-8">
+    <UContainer class="py-8 sm:py-12 md:py-16 bg-gray-50">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div class="lg:col-span-2 space-y-6 sm:space-y-8">
           <div>
-            <div class="flex justify-between items-center mb-4">
-              <h2 class="text-2xl font-bold text-gray-900">
+            <div class="flex flex-wrap justify-between items-center gap-2 mb-3 sm:mb-4">
+              <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">
                 Next Big Event
               </h2>
               <UButton
@@ -148,30 +135,59 @@ useSeoMeta({
             </div>
 
             <div class="bg-white rounded-xl border border-gray-200 p-4">
+              <SkeletonCard
+                v-if="eventsLoading"
+                image
+              />
               <EventCard
+                v-else-if="upcomingEvent"
                 :event="upcomingEvent"
                 featured
+                :link="`/events/${upcomingEvent.slug}`"
               />
+              <div
+                v-else
+                class="text-gray-500 text-center py-8"
+              >
+                No upcoming events.
+              </div>
             </div>
           </div>
 
           <div>
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">
-              Latest School & Alumni News
-            </h2>
-            <div class="space-y-4">
-              <NewsCard
-                v-for="news in latestNews"
-                :key="news.id"
-                :title="news.title"
-                :date="news.date"
-                :excerpt="news.excerpt"
+            <div class="flex flex-wrap justify-between items-center gap-2 mb-3 sm:mb-4">
+              <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">
+                Featured News
+              </h2>
+              <UButton
+                variant="link"
+                label="View all news →"
+                to="/news"
               />
+            </div>
+            <div class="bg-white rounded-xl border border-gray-200 p-3 sm:p-4">
+              <SkeletonCard
+                v-if="newsLoading"
+                image
+              />
+              <NewsCard
+                v-else-if="featuredPost"
+                :title="featuredPost.title"
+                :date="formatDate(featuredPost.created_at)"
+                :excerpt="featuredPost.content.slice(0, 160) + (featuredPost.content.length > 160 ? '...' : '')"
+                :link="`/news/${featuredPost.slug}`"
+              />
+              <div
+                v-else
+                class="text-gray-500 text-center py-8"
+              >
+                No featured news yet.
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="space-y-6">
+        <div class="space-y-4 sm:space-y-6">
           <PaymentCard :dues="membershipDues" />
 
           <UCard class="bg-white text-gray-900 border border-gray-200">
@@ -213,3 +229,69 @@ useSeoMeta({
     </UContainer>
   </div>
 </template>
+
+<script setup lang="ts">
+import type { Event, AppEvent, Post } from '~/types/database.types'
+import { formatDate, formatTime } from '~/composables/useFormatters'
+import HeroSection from '~/components/HeroSection.vue'
+import StatsSection from '~/components/StatsSection.vue'
+import EventCard from '~/components/EventCard.vue'
+import NewsCard from '~/components/NewsCard.vue'
+import SkeletonCard from '~/components/SkeletonCard.vue'
+import { stats } from '~/data/homepage'
+
+const runtimeConfig = useRuntimeConfig()
+const membershipDues = runtimeConfig.public.membershipDues
+const whatsappNumber = runtimeConfig.public.whatsappNumber
+
+const client = useSupabaseClient()
+const user = useSupabaseUser()
+const events = ref<AppEvent[]>([])
+const eventsLoading = ref(true)
+const featuredPost = ref<Post | null>(null)
+const newsLoading = ref(true)
+
+onMounted(async () => {
+  try {
+    const [{ data: eventsData }, { data: postsData }] = await Promise.all([
+      client.from('events').select('*').order('event_date', { ascending: true }).limit(1),
+      client.from('posts').select('*').eq('featured', true).limit(1).maybeSingle()
+    ])
+
+    if (eventsData && eventsData.length) {
+      const e = eventsData[0] as Event
+      events.value = [{
+        ...e,
+        date: formatDate(e.event_date),
+        time: formatTime(e.event_date),
+        featured: e.featured || false,
+        past: new Date(e.event_date) < new Date()
+      }]
+    }
+    eventsLoading.value = false
+
+    if (postsData) {
+      featuredPost.value = postsData as Post
+    }
+    newsLoading.value = false
+  } catch {
+    eventsLoading.value = false
+    newsLoading.value = false
+  }
+})
+
+const upcomingEvent = computed(() => events.value[0])
+
+useSeoMeta({
+  title: 'SOSA Network — School Old Students Association',
+  description: 'Reconnect with old classmates, stay updated on school milestones, and never miss out on upcoming reunions, mentorship programs, and networking events.',
+  ogTitle: 'SOSA Network — School Old Students Association',
+  ogDescription: 'Reconnect with old classmates, stay updated on school milestones, and never miss out on upcoming reunions, mentorship programs, and networking events.'
+})
+
+useHead({
+  link: [
+    { rel: 'canonical', href: 'https://sosa-network.org' }
+  ]
+})
+</script>

@@ -17,6 +17,7 @@ export interface Event {
   location: string
   banner_url: string | null
   featured: boolean
+  slug: string | null
   created_at: string
 }
 
@@ -26,6 +27,18 @@ export interface Post {
   content: string
   category: string
   author: string | null
+  featured: boolean
+  image_url: string | null
+  slug: string | null
+  created_at: string
+}
+
+export interface HistoryItem {
+  id: string
+  title: string
+  content: string
+  event_date: string | null
+  image_url: string | null
   created_at: string
 }
 
@@ -34,6 +47,7 @@ export interface GalleryItem {
   title: string
   image_url: string
   caption: string | null
+  category: string
   event_year: string | null
   created_at: string
 }
@@ -51,6 +65,7 @@ export interface DirectoryAlumnus {
   set: string
   profession: string
   location: string
+  phone: string
 }
 
 export interface AppEvent {
@@ -61,6 +76,7 @@ export interface AppEvent {
   location: string
   banner_url: string | null
   featured: boolean
+  slug: string | null
   created_at: string
   date: string
   time: string

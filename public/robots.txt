@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /_nuxt/
+Disallow: /__nuxt/
+
+Sitemap: https://sosa-network.org/sitemap.xml
