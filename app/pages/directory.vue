@@ -160,15 +160,15 @@ const graduatingSets = computed(() => {
 const isAuthenticated = computed(() => !!user.value)
 
 useSeoMeta({
-  title: 'Alumni Directory — SOSA Network',
+  title: 'Alumni Directory — SOSA',
   description: 'Find and connect with former schoolmates across the globe.',
-  ogTitle: 'Alumni Directory — SOSA Network',
+  ogTitle: 'Alumni Directory — SOSA',
   ogDescription: 'Find and connect with former schoolmates across the globe.'
 })
 
 useHead({
   link: [
-    { rel: 'canonical', href: 'https://sosa-network.org/directory' }
+    { rel: 'canonical', href: 'https://sosa-ruddy.vercel.app/directory' }
   ]
 })
 </script>

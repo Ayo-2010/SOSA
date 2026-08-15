@@ -131,9 +131,9 @@ onMounted(async () => {
 })
 
 useSeoMeta({
-  title: 'News & Updates — SOSA Network',
+  title: 'News & Updates — SOSA',
   description: 'Latest news and announcements from the Startwell Old Student Association.',
-  ogTitle: 'News & Updates — SOSA Network',
+  ogTitle: 'News & Updates — SOSA',
   ogDescription: 'Latest news and announcements from the Startwell Old Student Association.'
 })
 </script>

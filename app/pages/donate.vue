@@ -160,7 +160,7 @@ useSeoMeta({
 
 useHead({
   link: [
-    { rel: 'canonical', href: 'https://sosa-network.org/donate' }
+    { rel: 'canonical', href: 'https://sosa-ruddy.vercel.app/donate' }
   ]
 })
 </script>

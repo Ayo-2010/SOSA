@@ -9,8 +9,8 @@ export default defineAppConfig({
     }
   },
   site: {
-    name: 'SOSA Network',
+    name: 'SOSA',
     description: 'School Old Students Association — Bridging generations of excellence through community, networking, and giving back.',
-    url: 'https://sosa-network.org'
+    url: 'https://sosa-ruddy.vercel.app'
   }
 })

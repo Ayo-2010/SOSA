@@ -426,15 +426,15 @@ const deletePost = async (id: string) => {
 }
 
 useSeoMeta({
-  title: 'Admin Blog — SOSA Network',
+  title: 'Admin Blog — SOSA',
   description: 'Manage blog articles.',
-  ogTitle: 'Admin Blog — SOSA Network',
+  ogTitle: 'Admin Blog — SOSA',
   ogDescription: 'Manage blog articles.'
 })
 
 useHead({
   link: [
-    { rel: 'canonical', href: 'https://sosa-network.org/admin/blog' }
+    { rel: 'canonical', href: 'https://sosa-ruddy.vercel.app/admin/blog' }
   ]
 })
 </script>

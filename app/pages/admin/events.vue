@@ -398,15 +398,15 @@ const deleteEvent = async (id: string) => {
 }
 
 useSeoMeta({
-  title: 'Admin Events — SOSA Network',
+  title: 'Admin Events — SOSA',
   description: 'Manage events.',
-  ogTitle: 'Admin Events — SOSA Network',
+  ogTitle: 'Admin Events — SOSA',
   ogDescription: 'Manage events.'
 })
 
 useHead({
   link: [
-    { rel: 'canonical', href: 'https://sosa-network.org/admin/events' }
+    { rel: 'canonical', href: 'https://sosa-ruddy.vercel.app/admin/events' }
   ]
 })
 </script>

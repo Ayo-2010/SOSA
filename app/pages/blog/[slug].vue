@@ -102,7 +102,7 @@ onMounted(async () => {
 })
 
 useHead({
-  title: computed(() => post.value ? `${post.value.title} — SOSA Network` : 'Post Not Found — SOSA Network'),
+  title: computed(() => post.value ? `${post.value.title} — SOSA` : 'Post Not Found — SOSA'),
   meta: [
     { name: 'description', content: computed(() => post.value ? post.value.content.slice(0, 160) : 'The requested post could not be found.') },
     { property: 'og:title', content: computed(() => post.value?.title || 'Post Not Found') },
@@ -112,7 +112,7 @@ useHead({
 
 useHead({
   link: [
-    { rel: 'canonical', href: `https://sosa-network.org/blog/${route.params.slug}` }
+    { rel: 'canonical', href: `https://sosa-ruddy.vercel.app/blog/${route.params.slug}` }
   ]
 })
 </script>

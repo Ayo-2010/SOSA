@@ -196,13 +196,13 @@ import { site } from '~/data/site'
 useSeoMeta({
   title: 'About — Startwell Old Student Association',
   description: 'Learn about the Startwell Old Student Association (SOSA): our motto, history, founder, and key programs.',
-  ogTitle: 'About — SOSA Network',
+  ogTitle: 'About — SOSA',
   ogDescription: 'Learn about SOSA: our motto, history, founder, and key programs.'
 })
 
 useHead({
   link: [
-    { rel: 'canonical', href: 'https://sosa-network.org/about' }
+    { rel: 'canonical', href: 'https://sosa-ruddy.vercel.app/about' }
   ]
 })
 </script>

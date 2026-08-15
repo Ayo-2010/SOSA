@@ -371,15 +371,15 @@ onMounted(async () => {
 })
 
 useSeoMeta({
-  title: 'Admin Dashboard — SOSA Network',
+  title: 'Admin Dashboard — SOSA',
   description: 'Manage contributions, events, and platform updates.',
-  ogTitle: 'Admin Dashboard — SOSA Network',
+  ogTitle: 'Admin Dashboard — SOSA',
   ogDescription: 'Manage contributions, events, and platform updates.'
 })
 
 useHead({
   link: [
-    { rel: 'canonical', href: 'https://sosa-network.org/admin' }
+    { rel: 'canonical', href: 'https://sosa-ruddy.vercel.app/admin' }
   ]
 })
 </script>

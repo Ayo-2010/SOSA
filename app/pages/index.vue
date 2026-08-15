@@ -283,15 +283,18 @@ onMounted(async () => {
 const upcomingEvent = computed(() => events.value[0])
 
 useSeoMeta({
-  title: 'SOSA Network — School Old Students Association',
+  title: 'SOSA — School Old Students Association',
   description: 'Reconnect with old classmates, stay updated on school milestones, and never miss out on upcoming reunions, mentorship programs, and networking events.',
-  ogTitle: 'SOSA Network — School Old Students Association',
+  ogTitle: 'SOSA — School Old Students Association',
   ogDescription: 'Reconnect with old classmates, stay updated on school milestones, and never miss out on upcoming reunions, mentorship programs, and networking events.'
 })
 
 useHead({
+  meta: [
+    { name: 'google-site-verification', content: 'OOMrRBi4eYrVRvTFhX1dRDaM3yLq8CgqOV2j4af0etU' }
+  ],
   link: [
-    { rel: 'canonical', href: 'https://sosa-network.org' }
+    { rel: 'canonical', href: 'https://sosa-ruddy.vercel.app' }
   ]
 })
 </script>

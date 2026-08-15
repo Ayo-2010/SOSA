@@ -18,7 +18,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'SOSA Network - Start-Well Old Students Association',
+      title: 'SOSA - Start-Well Old Students Association',
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }
       ]
@@ -35,8 +35,8 @@ export default defineNuxtConfig({
     public: {
       supabaseUrl: process.env.NUXT_PUBLIC_SUPABASE_URL,
       supabaseKey: process.env.NUXT_PUBLIC_SUPABASE_KEY,
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://sosa-network.org',
-      siteName: 'SOSA Network',
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://sosa-ruddy.vercel.app',
+      siteName: 'SOSA',
       siteDescription: 'School Old Students Association — Bridging generations of excellence through community, networking, and giving back.',
       membershipDues: {
         amount: '500',
@@ -87,8 +87,8 @@ export default defineNuxtConfig({
   pwa: {
     registerType: 'autoUpdate',
     manifest: {
-      name: 'SOSA Network - Start-Well Old Students Association',
-      short_name: 'SOSA Network',
+      name: 'SOSA - Start-Well Old Students Association',
+      short_name: 'SOSA',
       description: 'School Old Students Association — Bridging generations of excellence through community, networking, and giving back.',
       theme_color: '#059669',
       background_color: '#f9fafb',

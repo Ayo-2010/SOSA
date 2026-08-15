@@ -113,13 +113,13 @@ const pastEvents = computed(() => events.value.filter(e => e.past))
 useSeoMeta({
   title: 'Events — Startwell Old Student Association',
   description: 'View upcoming and past events, reunions, and programs by the Startwell Old Student Association.',
-  ogTitle: 'Events — SOSA Network',
+  ogTitle: 'Events — SOSA',
   ogDescription: 'View upcoming reunions, fundraisers, and chapter get-togethers.'
 })
 
 useHead({
   link: [
-    { rel: 'canonical', href: 'https://sosa-network.org/events' }
+    { rel: 'canonical', href: 'https://sosa-ruddy.vercel.app/events' }
   ]
 })
 </script>

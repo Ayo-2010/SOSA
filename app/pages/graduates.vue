@@ -105,15 +105,15 @@ onMounted(async () => {
 })
 
 useSeoMeta({
-  title: 'Graduating Student Book — SOSA Network',
+  title: 'Graduating Student Book — SOSA',
   description: 'View the graduating student book for the classes of 2022, 2023, 2024, 2025, and 2026.',
-  ogTitle: 'Graduating Student Book — SOSA Network',
+  ogTitle: 'Graduating Student Book — SOSA',
   ogDescription: 'Meet the graduating classes of 2022 through 2026.'
 })
 
 useHead({
   link: [
-    { rel: 'canonical', href: 'https://sosa-network.org/graduates' }
+    { rel: 'canonical', href: 'https://sosa-ruddy.vercel.app/graduates' }
   ]
 })
 </script>

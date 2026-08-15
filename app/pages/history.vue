@@ -123,15 +123,15 @@ onMounted(async () => {
 })
 
 useSeoMeta({
-  title: 'History — SOSA Network',
+  title: 'History — SOSA',
   description: 'Explore the history and milestones of the Startwell Old Student Association.',
-  ogTitle: 'History — SOSA Network',
+  ogTitle: 'History — SOSA',
   ogDescription: 'Explore the history and milestones of SOSA.'
 })
 
 useHead({
   link: [
-    { rel: 'canonical', href: 'https://sosa-network.org/history' }
+    { rel: 'canonical', href: 'https://sosa-ruddy.vercel.app/history' }
   ]
 })
 </script>

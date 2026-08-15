@@ -369,15 +369,15 @@ const onSubmit = async () => {
 }
 
 useSeoMeta({
-  title: 'Alumni Registration — SOSA Network',
+  title: 'Alumni Registration — SOSA',
   description: 'Join the official database and update your professional details.',
-  ogTitle: 'Alumni Registration — SOSA Network',
+  ogTitle: 'Alumni Registration — SOSA',
   ogDescription: 'Join the official database and update your professional details.'
 })
 
 useHead({
   link: [
-    { rel: 'canonical', href: 'https://sosa-network.org/register' }
+    { rel: 'canonical', href: 'https://sosa-ruddy.vercel.app/register' }
   ]
 })
 </script>

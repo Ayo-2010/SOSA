@@ -421,15 +421,15 @@ const verifyContribution = async (id: string) => {
 }
 
 useSeoMeta({
-  title: 'Admin Contributions — SOSA Network',
+  title: 'Admin Contributions — SOSA',
   description: 'Verify and record member contribution payments.',
-  ogTitle: 'Admin Contributions — SOSA Network',
+  ogTitle: 'Admin Contributions — SOSA',
   ogDescription: 'Verify and record member contribution payments.'
 })
 
 useHead({
   link: [
-    { rel: 'canonical', href: 'https://sosa-network.org/admin/contributions' }
+    { rel: 'canonical', href: 'https://sosa-ruddy.vercel.app/admin/contributions' }
   ]
 })
 </script>

@@ -154,15 +154,15 @@ const onSubmit = async () => {
 }
 
 useSeoMeta({
-  title: 'Member Login — SOSA Network',
+  title: 'Member Login — SOSA',
   description: 'Sign in to access the alumni directory, event registrations, and your profile.',
-  ogTitle: 'Member Login — SOSA Network',
+  ogTitle: 'Member Login — SOSA',
   ogDescription: 'Sign in to access the alumni directory, event registrations, and your profile.'
 })
 
 useHead({
   link: [
-    { rel: 'canonical', href: 'https://sosa-network.org/login' }
+    { rel: 'canonical', href: 'https://sosa-ruddy.vercel.app/login' }
   ]
 })
 </script>

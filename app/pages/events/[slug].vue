@@ -115,7 +115,7 @@ onMounted(async () => {
 })
 
 useHead({
-  title: computed(() => event.value ? `${event.value.title} — SOSA Network` : 'Event Not Found — SOSA Network'),
+  title: computed(() => event.value ? `${event.value.title} — SOSA` : 'Event Not Found — SOSA'),
   meta: [
     { name: 'description', content: computed(() => event.value ? event.value.description.slice(0, 160) : 'The requested event could not be found.') },
     { property: 'og:title', content: computed(() => event.value?.title || 'Event Not Found') },
@@ -125,7 +125,7 @@ useHead({
 
 useHead({
   link: [
-    { rel: 'canonical', href: `https://sosa-network.org/events/${route.params.slug}` }
+    { rel: 'canonical', href: `https://sosa-ruddy.vercel.app/events/${route.params.slug}` }
   ]
 })
 </script>

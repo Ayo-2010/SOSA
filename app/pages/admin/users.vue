@@ -171,15 +171,15 @@ onMounted(async () => {
 })
 
 useSeoMeta({
-  title: 'Admin Users — SOSA Network',
+  title: 'Admin Users — SOSA',
   description: 'Manage administrator accounts.',
-  ogTitle: 'Admin Users — SOSA Network',
+  ogTitle: 'Admin Users — SOSA',
   ogDescription: 'Manage administrator accounts.'
 })
 
 useHead({
   link: [
-    { rel: 'canonical', href: 'https://sosa-network.org/admin/users' }
+    { rel: 'canonical', href: 'https://sosa-ruddy.vercel.app/admin/users' }
   ]
 })
 </script>

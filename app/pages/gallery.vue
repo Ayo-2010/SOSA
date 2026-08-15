@@ -91,15 +91,15 @@ const filteredImages = computed(() => {
 })
 
 useSeoMeta({
-  title: 'Photo Gallery — SOSA Network',
+  title: 'Photo Gallery — SOSA',
   description: 'Explore memories from past events, campus milestones, and alumni reunions.',
-  ogTitle: 'Photo Gallery — SOSA Network',
+  ogTitle: 'Photo Gallery — SOSA',
   ogDescription: 'Relive the golden days through our digital collection of historical yearbooks and alumni reunions.'
 })
 
 useHead({
   link: [
-    { rel: 'canonical', href: 'https://sosa-network.org/gallery' }
+    { rel: 'canonical', href: 'https://sosa-ruddy.vercel.app/gallery' }
   ]
 })
 </script>

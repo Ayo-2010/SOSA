@@ -112,9 +112,9 @@ onMounted(async () => {
 })
 
 useSeoMeta({
-  title: 'Blog & Updates — SOSA Network',
+  title: 'Blog & Updates — SOSA',
   description: 'In-depth stories, program updates, and alumni spotlights from the Startwell Old Student Association community.',
-  ogTitle: 'Blog & Updates — SOSA Network',
+  ogTitle: 'Blog & Updates — SOSA',
   ogDescription: 'In-depth stories, program updates, and alumni spotlights from the SOSA community.'
 })
 </script>

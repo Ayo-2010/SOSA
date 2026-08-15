@@ -496,15 +496,15 @@ const deleteItem = async (id: string) => {
 }
 
 useSeoMeta({
-  title: 'Admin Gallery — SOSA Network',
+  title: 'Admin Gallery — SOSA',
   description: 'Manage gallery photos.',
-  ogTitle: 'Admin Gallery — SOSA Network',
+  ogTitle: 'Admin Gallery — SOSA',
   ogDescription: 'Manage gallery photos.'
 })
 
 useHead({
   link: [
-    { rel: 'canonical', href: 'https://sosa-network.org/admin/gallery' }
+    { rel: 'canonical', href: 'https://sosa-ruddy.vercel.app/admin/gallery' }
   ]
 })
 </script>

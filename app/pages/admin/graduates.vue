@@ -420,15 +420,15 @@ const deleteItem = async (id: string) => {
 }
 
 useSeoMeta({
-  title: 'Admin Graduates — SOSA Network',
+  title: 'Admin Graduates — SOSA',
   description: 'Manage the graduating student book.',
-  ogTitle: 'Admin Graduates — SOSA Network',
+  ogTitle: 'Admin Graduates — SOSA',
   ogDescription: 'Manage the graduating student book.'
 })
 
 useHead({
   link: [
-    { rel: 'canonical', href: 'https://sosa-network.org/admin/graduates' }
+    { rel: 'canonical', href: 'https://sosa-ruddy.vercel.app/admin/graduates' }
   ]
 })
 </script>
